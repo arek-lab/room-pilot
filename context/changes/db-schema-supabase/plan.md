@@ -446,13 +446,13 @@ All indexes are created in Phase 1. The key query patterns for MVP (orders by to
 
 #### Automated
 
-- [x] 3.1 `npm run build` passes with no type errors
-- [x] 3.2 `npm run lint` passes
-- [x] 3.3 TypeScript type-check passes: `npx tsc --noEmit`
-- [x] 3.4 `src/types.ts` exists and is non-empty
+- [x] 3.1 `npm run build` passes with no type errors — 8d5f7a1
+- [x] 3.2 `npm run lint` passes — 8d5f7a1
+- [x] 3.3 TypeScript type-check passes: `npx tsc --noEmit` — 8d5f7a1
+- [x] 3.4 `src/types.ts` exists and is non-empty — 8d5f7a1
 
 #### Manual
 
-- [x] 3.5 `src/types.ts` contains `export type Database` with Tables for all 6 tables
-- [x] 3.6 Valid `guest_session` cookie (signed with GUEST_SESSION_SECRET) → middleware populates `guestToken`
-- [x] 3.7 Expired/tampered cookie → `guestToken` is null, no 500 error
+- [x] 3.5 `src/types.ts` contains `export type Database` with Tables for all 6 tables — 8d5f7a1
+- [x] 3.6 Valid `guest_session` cookie (signed with GUEST_SESSION_SECRET) → middleware populates `guestToken` — 8d5f7a1
+- [x] 3.7 Expired/tampered cookie → `guestToken` is null, no 500 error — 8d5f7a1
