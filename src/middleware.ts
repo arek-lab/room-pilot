@@ -1,5 +1,7 @@
 import { defineMiddleware } from "astro:middleware";
 import { createClient } from "@/lib/supabase";
+import { jwtVerify } from "jose";
+import { GUEST_SESSION_SECRET } from "astro:env/server";
 
 const PROTECTED_ROUTES = ["/dashboard"];
 
@@ -19,6 +21,24 @@ export const onRequest = defineMiddleware(async (context, next) => {
     if (!context.locals.user) {
       return context.redirect("/auth/signin");
     }
+  }
+
+  const guestCookie = context.cookies.get("guest_session")?.value;
+  if (guestCookie && GUEST_SESSION_SECRET) {
+    try {
+      const secret = new TextEncoder().encode(GUEST_SESSION_SECRET);
+      const { payload } = await jwtVerify(guestCookie, secret, { algorithms: ["HS256"] });
+      context.locals.guestToken = {
+        tokenId: payload.tokenId as string,
+        roomNumber: payload.roomNumber as string,
+        packageId: payload.packageId as string,
+        exp: payload.exp ?? 0,
+      };
+    } catch {
+      context.locals.guestToken = null;
+    }
+  } else {
+    context.locals.guestToken = null;
   }
 
   return next();

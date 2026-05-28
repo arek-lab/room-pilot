@@ -432,27 +432,27 @@ All indexes are created in Phase 1. The key query patterns for MVP (orders by to
 
 #### Automated
 
-- [x] 2.1 Seed migration applies: `npx supabase db push` exits 0
-- [x] 2.2 `npx supabase migration list` shows exactly 3 applied migrations
-- [x] 2.3 Row counts correct: 8 services, 3 packages, 10 room_qr_codes, 19 package_services
+- [x] 2.1 Seed migration applies: `npx supabase db push` exits 0 — f7b2b96
+- [x] 2.2 `npx supabase migration list` shows exactly 3 applied migrations — f7b2b96
+- [x] 2.3 Row counts correct: 8 services, 3 packages, 10 room_qr_codes, 19 package_services — f7b2b96
 
 #### Manual
 
-- [x] 2.4 All 8 services visible in Studio Table Editor with correct names and categories
-- [x] 2.5 Package "Premium" has 6 included services and 2 addon services in package_services
-- [x] 2.6 Room QR codes for rooms 101–110 present with unique non-null qr_token values
+- [x] 2.4 All 8 services visible in Studio Table Editor with correct names and categories — f7b2b96
+- [x] 2.5 Package "Premium" has 6 included services and 2 addon services in package_services — f7b2b96
+- [x] 2.6 Room QR codes for rooms 101–110 present with unique non-null qr_token values — f7b2b96
 
 ### Phase 3: TypeScript Types + Environment Contract
 
 #### Automated
 
-- [ ] 3.1 `npm run build` passes with no type errors
-- [ ] 3.2 `npm run lint` passes
-- [ ] 3.3 TypeScript type-check passes: `npx tsc --noEmit`
-- [ ] 3.4 `src/types.ts` exists and is non-empty
+- [x] 3.1 `npm run build` passes with no type errors
+- [x] 3.2 `npm run lint` passes
+- [x] 3.3 TypeScript type-check passes: `npx tsc --noEmit`
+- [x] 3.4 `src/types.ts` exists and is non-empty
 
 #### Manual
 
-- [ ] 3.5 `src/types.ts` contains `export type Database` with Tables for all 6 tables
-- [ ] 3.6 Valid `guest_session` cookie (signed with GUEST_SESSION_SECRET) → middleware populates `guestToken`
-- [ ] 3.7 Expired/tampered cookie → `guestToken` is null, no 500 error
+- [x] 3.5 `src/types.ts` contains `export type Database` with Tables for all 6 tables
+- [x] 3.6 Valid `guest_session` cookie (signed with GUEST_SESSION_SECRET) → middleware populates `guestToken`
+- [x] 3.7 Expired/tampered cookie → `guestToken` is null, no 500 error
