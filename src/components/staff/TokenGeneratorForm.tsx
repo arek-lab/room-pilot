@@ -41,7 +41,7 @@ export default function TokenGeneratorForm({ packages, rooms }: Props) {
   const [error, setError] = useState<string | null>(null);
   const [generated, setGenerated] = useState<GeneratedData | null>(null);
 
-  async function handleSubmit(e: React.SyntheticEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!guestName.trim() || !roomNumber || !packageId || !checkInDate || !checkOutDate) {
@@ -102,7 +102,7 @@ export default function TokenGeneratorForm({ packages, rooms }: Props) {
   const checkOutMin = checkInDate ? isoDate(new Date(new Date(checkInDate + "T12:00:00").getTime() + 86400000)) : today;
 
   if (view === "generated" && generated) {
-    const qrUrl = `${window.location.origin}/guest/verify?token=${generated.tokenValue}`;
+    const qrUrl = `${window.location.origin}/guest/verify?token=${encodeURIComponent(generated.tokenValue)}`;
     return (
       <div className="flex min-h-[calc(100vh-4rem)] items-center justify-center p-4 print:block print:p-0">
         <div className="w-full max-w-md rounded-2xl border border-white/10 bg-white/10 p-8 text-white backdrop-blur-xl print:border-0 print:bg-transparent print:shadow-none">

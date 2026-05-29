@@ -1,4 +1,4 @@
-import type { APIContext } from "astro";
+import type { APIRoute } from "astro";
 import { z } from "zod";
 import { createClient } from "@/lib/supabase";
 
@@ -19,9 +19,12 @@ const schema = z
     message: "Check-out date must be after check-in date",
   });
 
-export async function POST(context: APIContext): Promise<Response> {
+export const POST: APIRoute = async (context) => {
   if (!context.locals.user) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  if (context.locals.user.app_metadata?.staff_role !== "staff") {
+    return Response.json({ error: "Forbidden" }, { status: 403 });
   }
 
   let body: unknown;
@@ -59,6 +62,7 @@ export async function POST(context: APIContext): Promise<Response> {
     .single();
 
   if (error) {
+    console.error("guest_tokens insert error:", error);
     return Response.json({ error: "Failed to create token" }, { status: 500 });
   }
 
@@ -70,4 +74,4 @@ export async function POST(context: APIContext): Promise<Response> {
     checkInDate,
     checkOutDate,
   });
-}
+};

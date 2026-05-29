@@ -240,6 +240,16 @@ No unit tests required for this slice — the logic is thin (UUID generation, da
 9. Click "Generate Another" → form resets to blank
 10. Open incognito window → navigate to `/dashboard/generate-token` → confirm redirect to `/auth/signin`
 
+## Addendum: Undocumented Changes (discovered during impl-review)
+
+The following files were modified during implementation but not listed in the original plan. Both changes are benign and backwards-compatible.
+
+**`src/lib/supabase.ts`** — Added `Database` type parameter to `createServerClient<Database>(...)`. Required to enable typed Supabase query results in the new API endpoint and page.
+
+**`src/components/auth/FormField.tsx`** — Added optional `min?: string` and `max?: string` props wired to the underlying `<input>`. Required for date-field constraints (`min={today}`) in `TokenGeneratorForm`.
+
+---
+
 ## Migration Notes
 
 No schema changes in this slice. All DB tables used here were created in F-01.

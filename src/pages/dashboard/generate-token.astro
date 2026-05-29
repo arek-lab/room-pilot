@@ -12,12 +12,19 @@ const [packagesResult, roomsResult] = supabase
       supabase.from("packages").select("id, name").eq("active", true).order("name"),
       supabase.from("room_qr_codes").select("id, room_number").eq("active", true).order("room_number"),
     ])
-  : [{ data: null }, { data: null }];
+  : [{ data: null, error: null }, { data: null, error: null }];
 
+const loadError = !supabase || !!packagesResult.error || !!roomsResult.error;
 const packages = packagesResult.data ?? [];
 const rooms = roomsResult.data ?? [];
 ---
 
 <StaffLayout title="Generate Guest Token">
-  <TokenGeneratorForm packages={packages} rooms={rooms} client:load />
+  {loadError ? (
+    <div class="rounded-md bg-red-50 border border-red-200 p-4 text-sm text-red-700">
+      Failed to load room and package data. Please refresh the page.
+    </div>
+  ) : (
+    <TokenGeneratorForm packages={packages} rooms={rooms} client:load />
+  )}
 </StaffLayout>

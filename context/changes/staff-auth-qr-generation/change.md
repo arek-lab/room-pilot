@@ -1,9 +1,10 @@
 ---
 change_id: staff-auth-qr-generation
 title: Staff login and guest QR token generation
-status: implemented
+status: impl_reviewed
 created: 2026-05-28
-updated: 2026-05-28
+updated: 2026-05-29
+deployed: 2026-05-29
 archived_at: null
 ---
 
