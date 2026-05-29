@@ -1,0 +1,23 @@
+---
+export const prerender = false;
+import Layout from "@/layouts/Layout.astro";
+
+const reason = Astro.url.searchParams.get("reason");
+const isExpired = reason === "expired";
+
+const message = isExpired
+  ? "Your stay access has expired — please ask reception for assistance."
+  : "Access not available — please contact reception.";
+
+const title = isExpired ? "Access Expired" : "Access Unavailable";
+---
+
+<Layout title={title}>
+  <div class="flex min-h-screen items-center justify-center bg-gray-50 px-4">
+    <div class="w-full max-w-md rounded-xl border border-gray-200 bg-white p-8 text-center shadow-sm">
+      <div class="mb-4 text-4xl">{isExpired ? "⏰" : "🚫"}</div>
+      <h1 class="mb-2 text-xl font-semibold text-gray-900">{title}</h1>
+      <p class="text-gray-600">{message}</p>
+    </div>
+  </div>
+</Layout>
