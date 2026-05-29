@@ -1,0 +1,88 @@
+---
+export const prerender = false;
+import { jwtVerify, SignJWT } from "jose";
+import { GUEST_SESSION_SECRET } from "astro:env/server";
+import { createServiceRoleClient } from "@/lib/supabase";
+
+if (Astro.locals.guestToken) {
+  return Astro.redirect("/guest/panel", 302);
+}
+
+const { qr_token } = Astro.params;
+if (!qr_token) {
+  return Astro.redirect("/guest/error?reason=invalid", 302);
+}
+
+const pendingCookie = Astro.cookies.get("pending_guest")?.value;
+if (!pendingCookie || !GUEST_SESSION_SECRET) {
+  return Astro.redirect("/guest/error?reason=invalid", 302);
+}
+
+const secret = new TextEncoder().encode(GUEST_SESSION_SECRET);
+
+let pendingPayload: { tokenId: string; type: string };
+try {
+  const { payload } = await jwtVerify(pendingCookie, secret, { algorithms: ["HS256"] });
+  pendingPayload = payload as typeof pendingPayload;
+} catch {
+  return Astro.redirect("/guest/error?reason=invalid", 302);
+}
+
+const supabase = createServiceRoleClient();
+if (!supabase) {
+  return Astro.redirect("/guest/error?reason=invalid", 302);
+}
+
+const { data: room } = await supabase
+  .from("room_qr_codes")
+  .select("room_number")
+  .eq("qr_token", qr_token)
+  .maybeSingle();
+
+if (!room) {
+  return Astro.redirect("/guest/error?reason=invalid", 302);
+}
+
+const { data: guestToken } = await supabase
+  .from("guest_tokens")
+  .select("id, room_number, package_id, check_out_date")
+  .eq("id", pendingPayload.tokenId)
+  .maybeSingle();
+
+if (guestToken?.room_number !== room.room_number) {
+  return Astro.redirect("/guest/error?reason=invalid", 302);
+}
+
+const today = new Date().toISOString().slice(0, 10);
+if (guestToken.check_out_date < today) {
+  return Astro.redirect("/guest/error?reason=expired", 302);
+}
+
+const sessionExpiry = new Date(guestToken.check_out_date + "T23:59:59Z");
+const sessionJwt = await new SignJWT({
+  tokenId: guestToken.id,
+  roomNumber: guestToken.room_number,
+  packageId: guestToken.package_id,
+})
+  .setProtectedHeader({ alg: "HS256" })
+  .setExpirationTime(sessionExpiry)
+  .sign(secret);
+
+Astro.cookies.set("guest_session", sessionJwt, {
+  httpOnly: true,
+  secure: true,
+  sameSite: "lax",
+  path: "/",
+  expires: sessionExpiry,
+});
+
+Astro.cookies.set("pending_guest", "", {
+  httpOnly: true,
+  secure: true,
+  sameSite: "lax",
+  path: "/qr",
+  maxAge: 0,
+});
+
+return Astro.redirect("/guest/panel", 302);
+---

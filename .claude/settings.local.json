@@ -24,7 +24,14 @@
       "Bash(git -C \"C:\\\\data\\\\_10xdev\\\\room_pilot\" worktree list)",
       "Bash(Get-Content \"C:\\\\data\\\\_10xdev\\\\room_pilot\\\\CLAUDE.md\" -Raw)",
       "Bash(Select-Object -First 200)",
-      "PowerShell(\\(Get-Item \"C:\\\\data\\\\_10xdev\\\\room_pilot\\\\CLAUDE.md\"\\).Length; \\(Get-Content \"C:\\\\data\\\\_10xdev\\\\room_pilot\\\\CLAUDE.md\" | Measure-Object -Line\\).Lines)"
+      "PowerShell(\\(Get-Item \"C:\\\\data\\\\_10xdev\\\\room_pilot\\\\CLAUDE.md\"\\).Length; \\(Get-Content \"C:\\\\data\\\\_10xdev\\\\room_pilot\\\\CLAUDE.md\" | Measure-Object -Line\\).Lines)",
+      "Bash(echo \"exit:$?\")",
+      "Bash(dir \"C:\\\\data\\\\_10xdev\\\\room_pilot\\\\src\\\\pages\\\\api\")",
+      "PowerShell([System.DateTime]::UtcNow.ToString\\(\"yyyy-MM-ddTHH:mm:ssZ\"\\))",
+      "Skill(10x-plan)",
+      "Bash(echo \"exit: $?\")",
+      "Bash(not exist *)",
+      "Skill(10x-impl-review)"
     ],
     "deny": [
       "Bash(rm -rf *)"

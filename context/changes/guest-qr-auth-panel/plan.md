@@ -247,29 +247,29 @@ Build `GuestLayout.astro` and `/guest/panel.astro`. The panel queries the guest'
 
 #### Automated
 
-- [x] 1.1 Type checking passes: `npm run typecheck`
-- [x] 1.2 Linting passes: `npm run lint`
+- [x] 1.1 Type checking passes: `npm run typecheck` — d3a71ea
+- [x] 1.2 Linting passes: `npm run lint` — d3a71ea
 
 #### Manual
 
-- [x] 1.3 Valid token renders instruction screen and sets `pending_guest` cookie
-- [x] 1.4 Expired token renders expired message inline
-- [x] 1.5 Missing/invalid token renders generic invalid message inline
-- [ ] 1.6 Already-authenticated guest redirects to `/guest/panel`
+- [x] 1.3 Valid token renders instruction screen and sets `pending_guest` cookie — d3a71ea
+- [x] 1.4 Expired token renders expired message inline — d3a71ea
+- [x] 1.5 Missing/invalid token renders generic invalid message inline — d3a71ea
+- [x] 1.6 Already-authenticated guest redirects to `/guest/panel`
 
 ### Phase 2: Room QR Verification and Session Issuance
 
 #### Automated
 
-- [ ] 2.1 Type checking passes: `npm run typecheck`
-- [ ] 2.2 Linting passes: `npm run lint`
+- [x] 2.1 Type checking passes: `npm run typecheck`
+- [x] 2.2 Linting passes: `npm run lint`
 
 #### Manual
 
-- [ ] 2.3 Valid room QR + matching pending cookie → `guest_session` cookie set, redirect to panel
-- [ ] 2.4 Valid room QR + no pending cookie → redirect to `/guest/error?reason=invalid`
-- [ ] 2.5 Valid room QR + pending cookie for different room → redirect to `/guest/error?reason=invalid`
-- [ ] 2.6 Already-authenticated guest visiting room QR → silent redirect to panel
+- [x] 2.3 Valid room QR + matching pending cookie → `guest_session` cookie set, redirect to panel
+- [x] 2.4 Valid room QR + no pending cookie → redirect to `/guest/error?reason=invalid`
+- [x] 2.5 Valid room QR + pending cookie for different room → redirect to `/guest/error?reason=invalid`
+- [x] 2.6 Already-authenticated guest visiting room QR → silent redirect to panel
 
 ### Phase 3: Guest Panel
 

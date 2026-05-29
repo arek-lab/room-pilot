@@ -5,7 +5,6 @@ import { createServiceRoleClient } from "@/lib/supabase";
 import { SignJWT } from "jose";
 import { GUEST_SESSION_SECRET } from "astro:env/server";
 
-// Already authenticated — send to panel
 if (Astro.locals.guestToken) {
   return Astro.redirect("/guest/panel", 302);
 }
@@ -14,26 +13,29 @@ const token = Astro.url.searchParams.get("token");
 
 const UUID_RE = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 
-type View = "instruction" | "expired" | "invalid";
+type View = "instruction" | "expired" | "invalid" | "service_error";
 
 let view: View = "invalid";
 
 if (token && UUID_RE.test(token)) {
   const supabase = createServiceRoleClient();
-  if (supabase) {
-    const { data: row } = await supabase
+  if (!supabase) {
+    view = "service_error";
+  } else {
+    const { data: row, error: dbError } = await supabase
       .from("guest_tokens")
       .select("id, check_out_date")
       .eq("token_value", token)
       .maybeSingle();
 
-    if (row) {
+    if (dbError) {
+      view = "service_error";
+    } else if (row) {
       const today = new Date().toISOString().slice(0, 10);
       if (row.check_out_date < today) {
         view = "expired";
-      } else {
-        // Issue pending_guest cookie
-        const secret = new TextEncoder().encode(GUEST_SESSION_SECRET ?? "");
+      } else if (GUEST_SESSION_SECRET) {
+        const secret = new TextEncoder().encode(GUEST_SESSION_SECRET);
         const pendingJwt = await new SignJWT({ tokenId: row.id, type: "pending_guest" })
           .setProtectedHeader({ alg: "HS256" })
           .setExpirationTime("10m")
@@ -43,17 +45,15 @@ if (token && UUID_RE.test(token)) {
           httpOnly: true,
           secure: true,
           sameSite: "lax",
-          path: "/",
+          path: "/qr",
           maxAge: 600,
         });
 
         view = "instruction";
       }
     }
-    // No row → view stays "invalid" (same as unknown token — avoids UUID enumeration)
   }
 }
-// Missing/invalid token format → view stays "invalid"
 ---
 
 <Layout title="Guest Access">
@@ -83,6 +83,15 @@ if (token && UUID_RE.test(token)) {
             <div class="mb-4 text-4xl">🚫</div>
             <h1 class="mb-2 text-xl font-semibold text-gray-900">Access Unavailable</h1>
             <p class="text-gray-600">Access not available — please contact reception.</p>
+          </>
+        )
+      }
+      {
+        view === "service_error" && (
+          <>
+            <div class="mb-4 text-4xl">⚙️</div>
+            <h1 class="mb-2 text-xl font-semibold text-gray-900">Service Unavailable</h1>
+            <p class="text-gray-600">Service temporarily unavailable — please try again or contact reception.</p>
           </>
         )
       }

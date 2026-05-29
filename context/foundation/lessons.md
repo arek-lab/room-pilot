@@ -32,3 +32,10 @@
 
 **Applies to:** Every migration or Admin API call setting `raw_app_meta_data`. Flag any plan that proposes setting `app_metadata.role`.
 
+## Nie używaj `projectService` w parserOptions dla plików .astro
+
+- **Context**: Faza planowania lub implementacji zmian dotyczących lintingu (`eslint.config.*`)
+- **Problem**: Każde uruchomienie `npm run lint` generuje wielokrotne ostrzeżenia zaśmiecające output CI i lokalne — `astro-eslint-parser does not support the projectService option`.
+- **Rule**: Nie używaj `languageOptions.parserOptions.projectService` w konfiguracji ESLint dla plików `.astro` — `astro-eslint-parser` nie obsługuje tej opcji i generuje ostrzeżenia przy każdym uruchomieniu. Zamiast tego użyj `project: true`.
+- **Applies to**: implement
+
