@@ -1,7 +1,7 @@
 ---
 change_id: guest-order-addon
 title: Guest orders and cancels add-ons with email notification to reception
-status: implementing
+status: implemented
 created: 2026-05-31
 updated: 2026-06-01
 planned: 2026-05-31
