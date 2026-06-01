@@ -1,7 +1,7 @@
 ---
 change_id: reception-order-panel
 title: Reception order panel — staff views, manages, and fulfils guest add-on orders
-status: implementing
+status: implemented
 created: 2026-06-01
 updated: 2026-06-01
 archived_at: null
