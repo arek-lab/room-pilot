@@ -1,0 +1,40 @@
+---
+export const prerender = false;
+import Layout from "@/layouts/Layout.astro";
+import RoomQrGrid from "@/components/test/RoomQrGrid";
+import { createServiceRoleClient } from "@/lib/supabase";
+
+const supabase = createServiceRoleClient();
+const { data: rooms, error } = supabase
+  ? await supabase
+      .from("room_qr_codes")
+      .select("room_number, qr_token")
+      .eq("active", true)
+      .order("room_number")
+  : { data: null, error: null };
+
+const origin = Astro.url.origin;
+---
+
+<Layout title="Test — Room QR Codes">
+  <div class="min-h-screen bg-gray-50 px-6 py-10">
+    <div class="mx-auto max-w-6xl">
+      <div class="mb-8 flex items-center gap-3">
+        <h1 class="text-2xl font-bold text-gray-900">Room QR Codes</h1>
+        <span class="rounded-full bg-yellow-100 px-3 py-0.5 text-xs font-medium text-yellow-800">
+          dev only
+        </span>
+      </div>
+
+      {
+        error || !supabase ? (
+          <p class="text-sm text-red-600">Failed to load rooms from database.</p>
+        ) : !rooms?.length ? (
+          <p class="text-sm text-gray-500">No active rooms found in room_qr_codes.</p>
+        ) : (
+          <RoomQrGrid rooms={rooms} origin={origin} client:load />
+        )
+      }
+    </div>
+  </div>
+</Layout>

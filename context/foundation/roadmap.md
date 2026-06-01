@@ -100,14 +100,14 @@ Foundations poniżej zakładają, że poniższe warstwy są dostępne i ich NIE 
 
 ### S-03: Gość składa i anuluje zamówienie add-on
 
-- **Outcome:** gość może zamówić add-on z panelu i zobaczyć status "oczekuje" z wizualnym badge'em; może anulować zamówienie inline dopóki recepcja go nie oznaczyła jako zrealizowane; recepcja dostaje powiadomienie e-mail w ciągu 60 sekund od złożenia zamówienia.
+- **Outcome:** gość może zamówić add-on z panelu i zobaczyć status "oczekuje" z wizualnym badge'em; może anulować zamówienie inline dopóki recepcja go nie oznaczyła jako zrealizowane; recepcja dostaje powiadomienie za pomocą badge w dashboard recepcji.
 - **Change ID:** `guest-order-addon`
 - **PRD refs:** FR-008, FR-009, US-02
 - **Prerequisites:** S-02, F-01
 - **Parallel with:** S-05
 - **Blockers:** —
-- **Unknowns:** Jaka usługa e-mail do powiadomień dla recepcji? (`shape-notes.md` sugeruje Resend). Owner: user. Block: no (Resend lub Supabase emails — decyzja implementacyjna, nie blokuje planowania).
-- **Risk:** 60-sekundowy NFR zakłada dostarczenie e-mail przez zewnętrzną usługę; opóźnienie po stronie dostawcy (Resend, SMTP) wychodzi poza kontrolę aplikacji i może naruszyć NFR bez żadnego błędu w kodzie.
+- **Unknowns:** -
+- **Risk:** -
 - **Status:** proposed
 
 ### S-04: Panel recepcji — lista zamówień i obsługa
