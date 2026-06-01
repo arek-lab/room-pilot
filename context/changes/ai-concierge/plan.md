@@ -251,9 +251,9 @@ GPT-4o mini typical latency: 0.5–2 s. Full-response mode means the guest waits
 
 #### Automated
 
-- [x] 2.1 `npm run build` passes with new route
-- [x] 2.2 `npm run typecheck` passes
-- [x] 2.3 `npm run lint` clean
+- [x] 2.1 `npm run build` passes with new route — 6737ae7
+- [x] 2.2 `npm run typecheck` passes — 6737ae7
+- [x] 2.3 `npm run lint` clean — 6737ae7
 
 #### Manual
 
@@ -267,9 +267,9 @@ GPT-4o mini typical latency: 0.5–2 s. Full-response mode means the guest waits
 
 #### Automated
 
-- [ ] 3.1 `npm run build` passes
-- [ ] 3.2 `npm run typecheck` passes
-- [ ] 3.3 `npm run lint` clean
+- [x] 3.1 `npm run build` passes
+- [x] 3.2 `npm run typecheck` passes
+- [x] 3.3 `npm run lint` clean
 
 #### Manual
 

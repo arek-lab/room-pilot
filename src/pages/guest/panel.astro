@@ -3,6 +3,7 @@ export const prerender = false;
 import GuestLayout from "@/layouts/GuestLayout.astro";
 import { createServiceRoleClient } from "@/lib/supabase";
 import AddonList from "@/components/guest/AddonList";
+import ConciergeWidget from "@/components/guest/ConciergeWidget";
 
 if (!Astro.locals.guestToken) {
   return Astro.redirect("/guest/error?reason=invalid", 302);
@@ -83,4 +84,6 @@ const { guest_name, room_number, check_out_date } = guestTokenRow;
     <h2 class="mb-4 text-lg font-semibold text-gray-900">Available add-ons</h2>
     <AddonList client:load addons={addons} initialOrders={ordersRows ?? []} />
   </section>
+
+  <ConciergeWidget client:load />
 </GuestLayout>
