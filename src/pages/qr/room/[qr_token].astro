@@ -70,6 +70,7 @@ const sessionJwt = await new SignJWT({
   tokenId: guestToken.id,
   roomNumber: guestToken.room_number,
   packageId: guestToken.package_id,
+  checkOutDate: guestToken.check_out_date,
 })
   .setProtectedHeader({ alg: "HS256" })
   .setExpirationTime(sessionExpiry)

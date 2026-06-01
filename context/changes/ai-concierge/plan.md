@@ -236,10 +236,10 @@ GPT-4o mini typical latency: 0.5–2 s. Full-response mode means the guest waits
 
 #### Automated
 
-- [x] 1.1 `npm install` resolves without errors; `openai` in node_modules
-- [x] 1.2 `npm run build` completes without errors
-- [x] 1.3 `npm run typecheck` passes
-- [x] 1.4 `npm run lint` clean on new `hotel-context.ts`
+- [x] 1.1 `npm install` resolves without errors; `openai` in node_modules — caf4d98
+- [x] 1.2 `npm run build` completes without errors — caf4d98
+- [x] 1.3 `npm run typecheck` passes — caf4d98
+- [x] 1.4 `npm run lint` clean on new `hotel-context.ts` — caf4d98
 
 #### Manual
 
@@ -251,9 +251,9 @@ GPT-4o mini typical latency: 0.5–2 s. Full-response mode means the guest waits
 
 #### Automated
 
-- [ ] 2.1 `npm run build` passes with new route
-- [ ] 2.2 `npm run typecheck` passes
-- [ ] 2.3 `npm run lint` clean
+- [x] 2.1 `npm run build` passes with new route
+- [x] 2.2 `npm run typecheck` passes
+- [x] 2.3 `npm run lint` clean
 
 #### Manual
 

@@ -2,6 +2,7 @@ interface GuestTokenLocals {
   tokenId: string;
   roomNumber: string;
   packageId: string;
+  checkOutDate: string;
   exp: number;
 }
 

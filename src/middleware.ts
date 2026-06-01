@@ -32,6 +32,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
         tokenId: payload.tokenId as string,
         roomNumber: payload.roomNumber as string,
         packageId: payload.packageId as string,
+        checkOutDate: payload.checkOutDate as string,
         exp: payload.exp ?? 0,
       };
     } catch {
