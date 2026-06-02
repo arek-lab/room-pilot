@@ -401,12 +401,12 @@ The roadmap risk note flags: "warto zrobić visual snapshot przed i po" — scre
 
 #### Automated
 
-- [x] 3.1 TypeScript/lint check passes: `npm run lint`
-- [x] 3.2 Audit grep returns zero matches in `src/components/` and `src/layouts/`
+- [x] 3.1 TypeScript/lint check passes: `npm run lint` — cb5c5e4
+- [x] 3.2 Audit grep returns zero matches in `src/components/` and `src/layouts/` — cb5c5e4
 
 #### Manual
 
-- [ ] 3.3 Guest panel renders cream background, terakota accents, no gray surfaces
-- [ ] 3.4 Staff dashboard retains dark gradient, nav links readable, badge destructive red
-- [ ] 3.5 LibBadge renders with indigo tint
-- [ ] 3.6 No visual regressions on auth pages
+- [x] 3.3 Guest panel renders cream background, terakota accents, no gray surfaces
+- [x] 3.4 Staff dashboard retains dark gradient, nav links readable, badge destructive red
+- [x] 3.5 LibBadge renders with indigo tint
+- [x] 3.6 No visual regressions on auth pages

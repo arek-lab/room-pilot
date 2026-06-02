@@ -1,7 +1,7 @@
 ---
 change_id: design-token-foundation
 title: Design token foundation — boutique hotel palette, typography, and spacing as Tailwind/shadcn tokens
-status: implementing
+status: implemented
 created: 2026-06-02
 updated: 2026-06-02
 archived_at: null
