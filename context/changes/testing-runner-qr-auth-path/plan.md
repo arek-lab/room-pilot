@@ -394,11 +394,11 @@ After extracting the route logic, manually walk the full QR auth flow in the dev
 
 #### Automated
 
-- [x] 3.1 npm test exits 0; all 7 tests pass (1 smoke + 5 middleware + 2 QR auth)
-- [x] 3.2 npx tsc --noEmit passes including src/lib/qr-auth.ts and updated .astro
-- [x] 3.3 npm run lint passes
+- [x] 3.1 npm test exits 0; all 7 tests pass (1 smoke + 5 middleware + 2 QR auth) — caa604f
+- [x] 3.2 npx tsc --noEmit passes including src/lib/qr-auth.ts and updated .astro — caa604f
+- [x] 3.3 npm run lint passes — caa604f
 
 #### Manual
 
-- [x] 3.4 QR auth flow works correctly end-to-end in npm run dev after processQrAuth extraction
-- [x] 3.5 R1 happy path test decodes sessionJwt and verifies all four claims plus exp=T23:59:59Z
+- [x] 3.4 QR auth flow works correctly end-to-end in npm run dev after processQrAuth extraction — caa604f
+- [x] 3.5 R1 happy path test decodes sessionJwt and verifies all four claims plus exp=T23:59:59Z — caa604f

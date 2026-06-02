@@ -1,7 +1,7 @@
 ---
 change_id: testing-runner-qr-auth-path
 title: Runner + QR auth path — Phase 1 test coverage
-status: implementing
+status: implemented
 created: 2026-06-02
 updated: 2026-06-02
 archived_at: null
