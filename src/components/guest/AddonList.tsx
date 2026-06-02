@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface Addon {
   id: string;
@@ -37,6 +37,38 @@ export default function AddonList({ addons, initialOrders }: Props) {
   const [orders, setOrders] = useState<Partial<Record<string, OrderState>>>(() => buildInitialOrders(initialOrders));
   const [loading, setLoading] = useState<Partial<Record<string, boolean>>>({});
   const [errors, setErrors] = useState<Partial<Record<string, string | null>>>({});
+
+  const hasPending = Object.values(orders).some((o) => o?.status === "pending");
+  const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  useEffect(() => {
+    if (!hasPending) {
+      if (intervalRef.current !== null) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+      return;
+    }
+
+    const poll = async () => {
+      try {
+        const res = await fetch("/api/guest/orders");
+        if (!res.ok) return;
+        const rows = (await res.json()) as OrderRecord[];
+        setOrders(buildInitialOrders(rows));
+      } catch {
+        // silent — next poll will retry
+      }
+    };
+
+    intervalRef.current = setInterval(() => void poll(), 20_000);
+    return () => {
+      if (intervalRef.current !== null) {
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+    };
+  }, [hasPending]);
 
   const handleOrder = async (serviceId: string) => {
     setLoading((prev) => ({ ...prev, [serviceId]: true }));
