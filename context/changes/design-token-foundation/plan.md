@@ -374,28 +374,28 @@ The roadmap risk note flags: "warto zrobić visual snapshot przed i po" — scre
 
 #### Automated
 
-- [x] 1.1 TypeScript/lint check passes: `npm run lint`
-- [x] 1.2 Dev server starts without errors: `npm run dev`
+- [x] 1.1 TypeScript/lint check passes: `npm run lint` — 107a692
+- [x] 1.2 Dev server starts without errors: `npm run dev` — 107a692
 
 #### Manual
 
-- [x] 1.3 Body background is warm cream in browser
-- [x] 1.4 Primary buttons are terakota
-- [x] 1.5 Staff panel retains dark indigo gradient via `bg-cosmic`
-- [x] 1.6 Contrast check: terakota/cream ≥ 3:1, primary-foreground/terakota ≥ 4.5:1
+- [x] 1.3 Body background is warm cream in browser — 107a692
+- [x] 1.4 Primary buttons are terakota — 107a692
+- [x] 1.5 Staff panel retains dark indigo gradient via `bg-cosmic` — 107a692
+- [x] 1.6 Contrast check: terakota/cream ≥ 3:1, primary-foreground/terakota ≥ 4.5:1 — 107a692
 
 ### Phase 2: Typography Tokens & Font Loading
 
 #### Automated
 
-- [ ] 2.1 TypeScript/lint check passes: `npm run lint`
-- [ ] 2.2 Dev server starts without errors: `npm run dev`
+- [x] 2.1 TypeScript/lint check passes: `npm run lint`
+- [x] 2.2 Dev server starts without errors: `npm run dev`
 
 #### Manual
 
-- [ ] 2.3 Body text renders in Inter
-- [ ] 2.4 h1–h3 elements render in Playfair Display
-- [ ] 2.5 `font-sans` / `font-serif` utilities verified in DevTools
+- [x] 2.3 Body text renders in Inter
+- [x] 2.4 h1–h3 elements render in Playfair Display
+- [x] 2.5 `font-sans` / `font-serif` utilities verified in DevTools
 
 ### Phase 3: Hardcode Audit & Cleanup
 
