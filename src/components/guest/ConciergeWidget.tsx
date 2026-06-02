@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { MessageCircle, Sparkles, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 interface Message {
@@ -77,13 +77,12 @@ export default function ConciergeWidget() {
           setIsOpen(true);
         }}
         className={cn(
-          "bg-foreground text-background hover:bg-foreground/80 fixed right-6 bottom-6 z-50 flex items-center gap-2 rounded-full px-4 py-3 text-sm font-medium shadow-lg transition-opacity",
+          "bg-primary text-primary-foreground fixed right-4 bottom-6 z-50 flex h-12 w-12 items-center justify-center rounded-full shadow-lg transition-opacity",
           isOpen && "pointer-events-none opacity-0",
         )}
-        aria-label="Open concierge chat"
+        aria-label="Ask the concierge"
       >
-        <MessageCircle className="h-5 w-5" />
-        Ask the concierge
+        <Sparkles size={20} />
       </button>
 
       {isOpen && (

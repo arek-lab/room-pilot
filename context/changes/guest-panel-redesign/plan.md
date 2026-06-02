@@ -298,32 +298,32 @@ Brak nowych zapytań do bazy. Placeholdery gradientowe renderują się bez sieci
 
 #### Automated
 
-- [x] 2.1 TypeScript kompiluje się bez błędów: `npx tsc --noEmit`
-- [x] 2.2 Lint przechodzi: `npm run lint`
+- [x] 2.1 TypeScript kompiluje się bez błędów: `npx tsc --noEmit` — c7b8333
+- [x] 2.2 Lint przechodzi: `npm run lint` — c7b8333
 
 #### Manual
 
-- [x] 2.3 Header jest sticky przy scrollowaniu
-- [x] 2.4 Header pokazuje tylko pierwsze imię (nie pełne imię i nazwisko)
-- [x] 2.5 Grid included 2-kol na telefonie (≥360px)
-- [x] 2.6 Grid odpada do 1-kol na ekranie 320px (sprawdź w DevTools)
-- [x] 2.7 Serif nagłówki (Playfair Display) nad obiema sekcjami
-- [x] 2.8 Brak hardcoded gray-* klas w headerze
+- [x] 2.3 Header jest sticky przy scrollowaniu — c7b8333
+- [x] 2.4 Header pokazuje tylko pierwsze imię (nie pełne imię i nazwisko) — c7b8333
+- [x] 2.5 Grid included 2-kol na telefonie (≥360px) — c7b8333
+- [x] 2.6 Grid odpada do 1-kol na ekranie 320px (sprawdź w DevTools) — c7b8333
+- [x] 2.7 Serif nagłówki (Playfair Display) nad obiema sekcjami — c7b8333
+- [x] 2.8 Brak hardcoded gray-* klas w headerze — c7b8333
 
 ### Phase 3: AddonList Grid Refactor + ConciergeWidget FAB
 
 #### Automated
 
-- [ ] 3.1 TypeScript kompiluje się bez błędów: `npx tsc --noEmit`
-- [ ] 3.2 Lint przechodzi: `npm run lint`
+- [x] 3.1 TypeScript kompiluje się bez błędów: `npx tsc --noEmit`
+- [x] 3.2 Lint przechodzi: `npm run lint`
 
 #### Manual
 
-- [ ] 3.3 Add-ony renderują się jako grid 2-kol
-- [ ] 3.4 Przycisk "Order" ma tap target ≥ 44px (full-width dolny slot)
-- [ ] 3.5 Zamówienie add-ona działa end-to-end
-- [ ] 3.6 Anulowanie zamówienia działa
-- [ ] 3.7 Polling co 20s aktualizuje statusy
-- [ ] 3.8 ConciergeWidget FAB — mały okrągły przycisk z ikoną Sparkles
-- [ ] 3.9 FAB otwiera panel po dotknięciu
-- [ ] 3.10 Brak regressionów w sekcji included services
+- [x] 3.3 Add-ony renderują się jako grid 2-kol
+- [x] 3.4 Przycisk "Order" ma tap target ≥ 44px (full-width dolny slot)
+- [x] 3.5 Zamówienie add-ona działa end-to-end
+- [x] 3.6 Anulowanie zamówienia działa
+- [x] 3.7 Polling co 20s aktualizuje statusy
+- [x] 3.8 ConciergeWidget FAB — mały okrągły przycisk z ikoną Sparkles
+- [x] 3.9 FAB otwiera panel po dotknięciu
+- [x] 3.10 Brak regressionów w sekcji included services

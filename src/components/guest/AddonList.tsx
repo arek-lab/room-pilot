@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import ServiceImage from "@/components/guest/ServiceImage";
+import { ServiceCard } from "@/components/guest/ServiceCard";
 
 interface Addon {
   id: string;
@@ -118,69 +118,35 @@ export default function AddonList({ addons, initialOrders }: Props) {
     return <p className="text-muted-foreground text-sm">No add-ons available for your package.</p>;
   }
 
-  return (
-    <ul className="space-y-3">
-      {addons.map((addon) => {
-        const order = orders[addon.id];
-        const isLoading = loading[addon.id] ?? false;
-        const error = errors[addon.id] ?? null;
-        const status = order?.status;
+  const anyError = Object.values(errors).find((e) => e != null);
 
-        return (
-          <li key={addon.id} className="border-border bg-card rounded-lg border px-4 py-3">
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
-                <ServiceImage imageUrl={addon.image_url} category={addon.category} name={addon.name} />
-                <div>
-                  <p className="text-foreground font-medium">{addon.name}</p>
-                  {addon.description && <p className="text-muted-foreground text-sm">{addon.description}</p>}
-                </div>
-              </div>
-              <div className="flex shrink-0 flex-col items-end gap-1">
-                {status === "pending" && order && (
-                  <>
-                    <span className="bg-accent/20 text-accent-foreground rounded-full px-2.5 py-0.5 text-xs font-medium">
-                      ⏳ Pending
-                    </span>
-                    <button
-                      onClick={() => handleCancel(addon.id, order.orderId)}
-                      disabled={isLoading}
-                      className="bg-muted text-muted-foreground hover:bg-muted/80 mt-1 rounded-md px-3 py-1 text-sm font-medium disabled:opacity-50"
-                    >
-                      {isLoading ? "Cancelling…" : "Cancel"}
-                    </button>
-                  </>
-                )}
-                {status === "fulfilled" && (
-                  <span className="bg-chart-4/20 text-chart-4 rounded-full px-2.5 py-0.5 text-xs font-medium">
-                    ✓ Fulfilled
-                  </span>
-                )}
-                {(!status || status === "cancelled") && (
-                  <>
-                    {status === "cancelled" && (
-                      <span className="bg-muted text-muted-foreground rounded-full px-2.5 py-0.5 text-xs font-medium">
-                        ✕ Cancelled
-                      </span>
-                    )}
-                    {addon.price_pln !== null && (
-                      <span className="text-muted-foreground text-sm">{addon.price_pln} PLN</span>
-                    )}
-                    <button
-                      onClick={() => handleOrder(addon.id)}
-                      disabled={isLoading}
-                      className="bg-secondary text-secondary-foreground hover:bg-secondary/90 mt-1 rounded-md px-3 py-1 text-sm font-medium disabled:opacity-50"
-                    >
-                      {isLoading ? "Ordering…" : "Order"}
-                    </button>
-                  </>
-                )}
-              </div>
-            </div>
-            {error && <p className="text-destructive mt-1 text-xs">{error}</p>}
-          </li>
-        );
-      })}
-    </ul>
+  return (
+    <>
+      {anyError && <p className="text-destructive mb-3 text-sm">{anyError}</p>}
+      <div className="grid grid-cols-1 gap-4 min-[360px]:grid-cols-2">
+        {addons.map((addon) => {
+          const order = orders[addon.id];
+          const orderStatus = (order?.status ?? "none") as "none" | "pending" | "fulfilled" | "cancelled";
+          const isLoading = loading[addon.id] ?? false;
+
+          return (
+            <ServiceCard
+              key={addon.id}
+              variant="addon"
+              id={addon.id}
+              name={addon.name}
+              description={addon.description}
+              category={addon.category}
+              imageUrl={addon.image_url}
+              price={addon.price_pln}
+              orderStatus={orderStatus}
+              onOrder={() => handleOrder(addon.id)}
+              onCancel={() => order && handleCancel(addon.id, order.orderId)}
+              isLoading={isLoading}
+            />
+          );
+        })}
+      </div>
+    </>
   );
 }
