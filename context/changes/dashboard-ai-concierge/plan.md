@@ -199,13 +199,13 @@ Trzy nowe komponenty React: `AiConciergePanel` (wrapper z Tabs), `HotelDataForm`
 
 #### Automated
 
-- [x] 2.1 Type check passes: `npm run lint`
-- [x] 2.2 Build passes: `npm run build`
+- [x] 2.1 Type check passes: `npm run lint` — c7f4d2c
+- [x] 2.2 Build passes: `npm run build` — c7f4d2c
 
 #### Manual
 
-- [x] 2.3 Tab "Dane o hotelu": formularz pre-wypełniony danymi z hotel-context.ts
-- [x] 2.4 Przycisk "Zapisz" nie wysyła requesta sieciowego
-- [x] 2.5 Po kliknięciu "Zapisz" pojawia się "✓ Zapisano", znika po ~2s
-- [x] 2.6 Tab "Alerty AI Concierge": placeholder z ikoną i tekstem "No alerts yet"
-- [x] 2.7 Brak błędów TypeScript i konsoli przeglądarki
+- [x] 2.3 Tab "Dane o hotelu": formularz pre-wypełniony danymi z hotel-context.ts — c7f4d2c
+- [x] 2.4 Przycisk "Zapisz" nie wysyła requesta sieciowego — c7f4d2c
+- [x] 2.5 Po kliknięciu "Zapisz" pojawia się "✓ Zapisano", znika po ~2s — c7f4d2c
+- [x] 2.6 Tab "Alerty AI Concierge": placeholder z ikoną i tekstem "No alerts yet" — c7f4d2c
+- [x] 2.7 Brak błędów TypeScript i konsoli przeglądarki — c7f4d2c
