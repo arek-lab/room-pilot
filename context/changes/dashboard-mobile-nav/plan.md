@@ -210,16 +210,16 @@ React island `client:load` dodaje ~minimal overhead — React jest już załadow
 
 #### Automated
 
-- [x] 2.1 TypeScript check passes (`npm run build` bez błędów typów)
-- [x] 2.2 Lint passes (`npm run lint` bez nowych błędów)
+- [x] 2.1 TypeScript check passes (`npm run build` bez błędów typów) — 4f217e9
+- [x] 2.2 Lint passes (`npm run lint` bez nowych błędów) — 4f217e9
 
 #### Manual
 
-- [x] 2.3 Kliknięcie hamburgera → drawer wysuwa się od prawej z animacją
-- [x] 2.4 Kliknięcie overlay → drawer się zamyka
-- [x] 2.5 Kliknięcie nav item → nawiguje i zamyka drawer
-- [x] 2.6 Sign Out działa (POST redirect, wylogowanie)
-- [x] 2.7 Pending badge poprawny od załadowania strony (SSR) i aktualizuje się z pollingiem
-- [x] 2.8 Aktywna strona wyróżniona wizualnie w drawer
-- [x] 2.9 Wszystkie tap targets ≥ 44px
-- [x] 2.10 Desktop viewport (≥ 768px): layout niezmieniony
+- [x] 2.3 Kliknięcie hamburgera → drawer wysuwa się od prawej z animacją — 4f217e9
+- [x] 2.4 Kliknięcie overlay → drawer się zamyka — 4f217e9
+- [x] 2.5 Kliknięcie nav item → nawiguje i zamyka drawer — 4f217e9
+- [x] 2.6 Sign Out działa (POST redirect, wylogowanie) — 4f217e9
+- [x] 2.7 Pending badge poprawny od załadowania strony (SSR) i aktualizuje się z pollingiem — 4f217e9
+- [x] 2.8 Aktywna strona wyróżniona wizualnie w drawer — 4f217e9
+- [x] 2.9 Wszystkie tap targets ≥ 44px — 4f217e9
+- [x] 2.10 Desktop viewport (≥ 768px): layout niezmieniony — 4f217e9
