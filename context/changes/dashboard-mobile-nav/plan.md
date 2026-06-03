@@ -198,28 +198,28 @@ React island `client:load` dodaje ~minimal overhead — React jest już załadow
 
 #### Automated
 
-- [x] 1.1 TypeScript check passes (`npm run build` bez błędów typów)
-- [x] 1.2 Lint passes (`npm run lint` bez nowych błędów)
+- [x] 1.1 TypeScript check passes (`npm run build` bez błędów typów) — 9794711
+- [x] 1.2 Lint passes (`npm run lint` bez nowych błędów) — 9794711
 
 #### Manual
 
-- [x] 1.3 Na viewport < 768px: hamburger widoczny, desktop nav items niewidoczne
-- [x] 1.4 Na viewport ≥ 768px: hamburger niewidoczny, desktop nav widoczny jak dotychczas
+- [x] 1.3 Na viewport < 768px: hamburger widoczny, desktop nav items niewidoczne — 9794711
+- [x] 1.4 Na viewport ≥ 768px: hamburger niewidoczny, desktop nav widoczny jak dotychczas — 9794711
 
 ### Phase 2: MobileNav.tsx — slide-in drawer
 
 #### Automated
 
-- [ ] 2.1 TypeScript check passes (`npm run build` bez błędów typów)
-- [ ] 2.2 Lint passes (`npm run lint` bez nowych błędów)
+- [x] 2.1 TypeScript check passes (`npm run build` bez błędów typów)
+- [x] 2.2 Lint passes (`npm run lint` bez nowych błędów)
 
 #### Manual
 
-- [ ] 2.3 Kliknięcie hamburgera → drawer wysuwa się od prawej z animacją
-- [ ] 2.4 Kliknięcie overlay → drawer się zamyka
-- [ ] 2.5 Kliknięcie nav item → nawiguje i zamyka drawer
-- [ ] 2.6 Sign Out działa (POST redirect, wylogowanie)
-- [ ] 2.7 Pending badge poprawny od załadowania strony (SSR) i aktualizuje się z pollingiem
-- [ ] 2.8 Aktywna strona wyróżniona wizualnie w drawer
-- [ ] 2.9 Wszystkie tap targets ≥ 44px
-- [ ] 2.10 Desktop viewport (≥ 768px): layout niezmieniony
+- [x] 2.3 Kliknięcie hamburgera → drawer wysuwa się od prawej z animacją
+- [x] 2.4 Kliknięcie overlay → drawer się zamyka
+- [x] 2.5 Kliknięcie nav item → nawiguje i zamyka drawer
+- [x] 2.6 Sign Out działa (POST redirect, wylogowanie)
+- [x] 2.7 Pending badge poprawny od załadowania strony (SSR) i aktualizuje się z pollingiem
+- [x] 2.8 Aktywna strona wyróżniona wizualnie w drawer
+- [x] 2.9 Wszystkie tap targets ≥ 44px
+- [x] 2.10 Desktop viewport (≥ 768px): layout niezmieniony
