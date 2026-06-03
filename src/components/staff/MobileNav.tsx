@@ -55,6 +55,16 @@ export default function MobileNav({ pendingCount: initialCount, currentPath }: P
             Generate Token
           </a>
           <a
+            href="/dashboard/ai-concierge"
+            onClick={close}
+            className={cn(
+              "text-sidebar-foreground flex min-h-[44px] items-center px-4 text-sm transition-colors hover:text-white",
+              currentPath === "/dashboard/ai-concierge" && "border-l-2 border-white font-semibold text-white",
+            )}
+          >
+            AI Concierge
+          </a>
+          <a
             href="/dashboard"
             onClick={close}
             className={cn(

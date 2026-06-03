@@ -1,0 +1,9 @@
+---
+export const prerender = false;
+import StaffLayout from "@/layouts/StaffLayout.astro";
+import AiConciergePanel from "@/components/staff/AiConciergePanel";
+---
+
+<StaffLayout title="AI Concierge">
+  <AiConciergePanel client:load />
+</StaffLayout>

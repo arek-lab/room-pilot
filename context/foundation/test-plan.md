@@ -6,7 +6,7 @@
 >
 > Refresh: re-run `/10x-test-plan --refresh` when stale (see §8).
 >
-> Last updated: 2026-06-02 (Phase 1 change opened)
+> Last updated: 2026-06-03 (Phase 1 implemented)
 
 ---
 
@@ -70,7 +70,7 @@ and Change-folder as artifacts appear on disk.
 
 | # | Phase name | Goal (one line) | Risks covered | Test types | Status | Change folder |
 |---|------------|-----------------|---------------|------------|--------|---------------|
-| 1 | Runner + QR auth path | Bootstrap Vitest; prove middleware JWT behavior, 2-step QR→session path, and token expiry | #1, #2, #3 | unit, integration | change opened | context/changes/testing-runner-qr-auth-path/ |
+| 1 | Runner + QR auth path | Bootstrap Vitest; prove middleware JWT behavior, 2-step QR→session path, and token expiry | #1, #2, #3 | unit, integration | implemented | context/changes/testing-runner-qr-auth-path/ |
 | 2 | Order flow integrity | Prove order CRUD, cancel gate, service authorization, and guest isolation | #4, #5, #6 | integration (API + Supabase) | not started | — |
 | 3 | E2E golden path | Playwright: north star end-to-end (staff login → QR generation → guest 2-step access → add-on order → reception status update) | #1, #2, #4 (smoke) | e2e | not started | — |
 | 4 | CI quality gate | Wire Vitest + Playwright into GitHub Actions; enforce type-check gate on every PR | all | CI configuration | not started | — |
