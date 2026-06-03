@@ -162,25 +162,25 @@ Replace the `Welcome` import with `LandingHero` in `index.astro` and add the aut
 
 #### Automated
 
-- [x] 1.1 Type check passes: `npm run lint`
+- [x] 1.1 Type check passes: `npm run lint` — 34707fc
 
 #### Manual
 
-- [x] 1.2 Hotel photography with overlay visible on `/`
-- [x] 1.3 Card with H1, tagline, form, sign-up link — readable and functional
-- [x] 1.4 Browser tab reads "RoomPilot"
-- [x] 1.5 Card renders correctly on 360px viewport
+- [x] 1.2 Hotel photography with overlay visible on `/` — 34707fc
+- [x] 1.3 Card with H1, tagline, form, sign-up link — readable and functional — 34707fc
+- [x] 1.4 Browser tab reads "RoomPilot" — 34707fc
+- [x] 1.5 Card renders correctly on 360px viewport — 34707fc
 
 ### Phase 2: Wire index.astro
 
 #### Automated
 
-- [x] 2.1 Type check passes: `npm run lint`
-- [x] 2.2 Build succeeds: `npm run build`
+- [x] 2.1 Type check passes: `npm run lint` — 34707fc
+- [x] 2.2 Build succeeds: `npm run build` — 34707fc
 
 #### Manual
 
-- [x] 2.3 Logged-in staff redirected from `/` to `/dashboard`
-- [x] 2.4 Full sign-in flow from landing → `/dashboard`
-- [x] 2.5 Auth error from landing → `/auth/signin` with error (no regression)
-- [x] 2.6 "Nie masz konta?" navigates to `/auth/signup`
+- [x] 2.3 Logged-in staff redirected from `/` to `/dashboard` — 34707fc
+- [x] 2.4 Full sign-in flow from landing → `/dashboard` — 34707fc
+- [x] 2.5 Auth error from landing → `/auth/signin` with error (no regression) — 34707fc
+- [x] 2.6 "Nie masz konta?" navigates to `/auth/signup` — 34707fc
