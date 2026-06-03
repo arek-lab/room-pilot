@@ -157,6 +157,7 @@ export default function TokenGeneratorForm({ packages, rooms }: Props) {
             onChange={setGuestName}
             placeholder="Jan Kowalski"
             icon={<User className="size-4" />}
+            variant="dark"
           />
 
           <div>
@@ -223,6 +224,7 @@ export default function TokenGeneratorForm({ packages, rooms }: Props) {
             onChange={setCheckInDate}
             icon={<Calendar className="size-4" />}
             min={today}
+            variant="dark"
           />
 
           <FormField
@@ -233,6 +235,7 @@ export default function TokenGeneratorForm({ packages, rooms }: Props) {
             onChange={setCheckOutDate}
             icon={<Calendar className="size-4" />}
             min={checkOutMin}
+            variant="dark"
           />
 
           <ServerError message={error} />

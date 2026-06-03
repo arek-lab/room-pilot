@@ -1,0 +1,24 @@
+---
+import SignInForm from "@/components/auth/SignInForm";
+---
+
+<section
+  class="relative min-h-screen"
+  style="background-image: url('https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=1920&q=80&fit=crop'); background-size: cover; background-position: center;"
+>
+  <div class="absolute inset-0 bg-black/40"></div>
+
+  <div class="relative z-10 flex min-h-screen items-center justify-center px-4 py-12">
+    <div class="border-border/40 bg-card/85 w-full max-w-sm rounded-xl border p-8 shadow-xl backdrop-blur-md">
+      <h1>RoomPilot</h1>
+      <p class="text-muted-foreground mt-1 mb-6 text-sm">Zaloguj się, by zarządzać usługami gości</p>
+
+      <SignInForm client:load />
+
+      <p class="text-muted-foreground mt-4 text-center text-xs">
+        Nie masz konta?{" "}
+        <a href="/auth/signup" class="hover:text-foreground underline underline-offset-4"> Zarejestruj się </a>
+      </p>
+    </div>
+  </div>
+</section>
