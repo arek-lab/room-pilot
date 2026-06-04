@@ -487,27 +487,27 @@ The `data-testid="pending-badge"` change in `StaffLayout.astro` is purely additi
 
 #### Automated
 
-- [x] 1.1 npm install completes without errors
-- [x] 1.2 npx playwright install --with-deps chromium completes
-- [x] 1.3 npm run test:e2e exits 0; 1 spec, 1 test passing
-- [x] 1.4 npx tsc --noEmit passes including playwright.config.ts
+- [x] 1.1 npm install completes without errors — 28dd754
+- [x] 1.2 npx playwright install --with-deps chromium completes — 28dd754
+- [x] 1.3 npm run test:e2e exits 0; 1 spec, 1 test passing — 28dd754
+- [x] 1.4 npx tsc --noEmit passes including playwright.config.ts — 28dd754
 
 #### Manual
 
-- [ ] 1.5 npx playwright show-report shows smoke passed, no warnings
+- [x] 1.5 npx playwright show-report shows smoke passed, no warnings — 28dd754
 
 ### Phase 2: Seed Constants + Test Infrastructure
 
 #### Automated
 
-- [ ] 2.1 npm run test:e2e exits 0 after Phase 2 changes
-- [ ] 2.2 npx tsc --noEmit passes
+- [x] 2.1 npm run test:e2e exits 0 after Phase 2 changes
+- [x] 2.2 npx tsc --noEmit passes
 
 #### Manual
 
-- [ ] 2.3 .env.test.example tracked in git; .env.test absent from git status
-- [ ] 2.4 Seed SQL inserts succeed in Supabase dashboard (4 rows, no conflicts)
-- [ ] 2.5 Staff test account exists in Supabase Auth with staff_role metadata
+- [x] 2.3 .env.test.example tracked in git; .env.test absent from git status
+- [x] 2.4 Seed SQL inserts succeed in Supabase dashboard (4 rows, no conflicts)
+- [x] 2.5 Staff test account exists in Supabase Auth with staff_role metadata
 
 ### Phase 3: Golden Path Spec
 

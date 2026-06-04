@@ -58,6 +58,7 @@ if (supabase) {
           Orders
           <span
             id="pending-badge"
+            data-testid="pending-badge"
             class:list={[
               "bg-destructive flex h-5 min-w-5 items-center justify-center rounded-full px-1.5 text-xs font-bold text-white",
               { hidden: pendingCount === 0 },
