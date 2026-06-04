@@ -239,23 +239,23 @@ Przed uruchomieniem testów:
 
 #### Automated
 
-- [x] 1.1 Istniejące 7 testów nadal przechodzi po dodaniu dotenv: `npm test`
-- [x] 1.2 TypeCheck przechodzi: `npx tsc --noEmit`
+- [x] 1.1 Istniejące 7 testów nadal przechodzi po dodaniu dotenv: `npm test` — cd7a229
+- [x] 1.2 TypeCheck przechodzi: `npx tsc --noEmit` — cd7a229
 
 #### Manual
 
-- [x] 1.3 `process.env.SUPABASE_URL` widoczne w test context (nie `undefined`)
+- [x] 1.3 `process.env.SUPABASE_URL` widoczne w test context (nie `undefined`) — cd7a229
 
 ### Phase 2: Integration Test File
 
 #### Automated
 
-- [ ] 2.1 Wszystkie testy przechodzą (istniejące + nowe): `npm test`
-- [ ] 2.2 TypeCheck przechodzi: `npx tsc --noEmit`
-- [ ] 2.3 Lint przechodzi: `npm run lint`
+- [x] 2.1 Wszystkie testy przechodzą (istniejące + nowe): `npm test`
+- [x] 2.2 TypeCheck przechodzi: `npx tsc --noEmit`
+- [x] 2.3 Lint przechodzi: `npm run lint`
 
 #### Manual
 
-- [ ] 2.4 Testy przechodzą z lokalnym Supabase (`supabase start`)
-- [ ] 2.5 Brak śmieciowych wierszy testowych w DB po przebiegu testów
-- [ ] 2.6 Regression check: usunięcie IDOR guard powoduje fail testu Risk #6
+- [x] 2.4 Testy przechodzą z lokalnym Supabase (`supabase start`)
+- [x] 2.5 Brak śmieciowych wierszy testowych w DB po przebiegu testów
+- [x] 2.6 Regression check: usunięcie IDOR guard powoduje fail testu Risk #6

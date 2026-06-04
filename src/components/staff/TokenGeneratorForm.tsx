@@ -41,7 +41,7 @@ export default function TokenGeneratorForm({ packages, rooms }: Props) {
   const [error, setError] = useState<string | null>(null);
   const [generated, setGenerated] = useState<GeneratedData | null>(null);
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.SyntheticEvent<HTMLFormElement>) {
     e.preventDefault();
 
     if (!guestName.trim() || !roomNumber || !packageId || !checkInDate || !checkOutDate) {

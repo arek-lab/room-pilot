@@ -23,7 +23,7 @@ export const POST: APIRoute = async (context) => {
   if (!context.locals.user) {
     return Response.json({ error: "Unauthorized" }, { status: 401 });
   }
-  if (context.locals.user.app_metadata?.staff_role !== "staff") {
+  if (context.locals.user.app_metadata.staff_role !== "staff") {
     return Response.json({ error: "Forbidden" }, { status: 403 });
   }
 

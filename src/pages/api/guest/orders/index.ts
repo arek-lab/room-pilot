@@ -32,7 +32,7 @@ export const GET: APIRoute = async (context) => {
     return Response.json({ error: "Failed to fetch orders" }, { status: 500 });
   }
 
-  return Response.json(rows ?? []);
+  return Response.json(rows);
 };
 
 export const POST: APIRoute = async (context) => {
