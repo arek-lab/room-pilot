@@ -1,7 +1,7 @@
 ---
 change_id: testing-order-flow-integrity
 title: Order flow integrity — integration tests for order CRUD, cancel gate, service authorization, and guest isolation
-status: implementing
+status: implemented
 created: 2026-06-04
 updated: 2026-06-04
 

@@ -250,12 +250,12 @@ Przed uruchomieniem testów:
 
 #### Automated
 
-- [x] 2.1 Wszystkie testy przechodzą (istniejące + nowe): `npm test`
-- [x] 2.2 TypeCheck przechodzi: `npx tsc --noEmit`
-- [x] 2.3 Lint przechodzi: `npm run lint`
+- [x] 2.1 Wszystkie testy przechodzą (istniejące + nowe): `npm test` — 87dacb6
+- [x] 2.2 TypeCheck przechodzi: `npx tsc --noEmit` — 87dacb6
+- [x] 2.3 Lint przechodzi: `npm run lint` — 87dacb6
 
 #### Manual
 
-- [x] 2.4 Testy przechodzą z lokalnym Supabase (`supabase start`)
-- [x] 2.5 Brak śmieciowych wierszy testowych w DB po przebiegu testów
-- [x] 2.6 Regression check: usunięcie IDOR guard powoduje fail testu Risk #6
+- [x] 2.4 Testy przechodzą z lokalnym Supabase (`supabase start`) — 87dacb6
+- [x] 2.5 Brak śmieciowych wierszy testowych w DB po przebiegu testów — 87dacb6
+- [x] 2.6 Regression check: usunięcie IDOR guard powoduje fail testu Risk #6 — 87dacb6
