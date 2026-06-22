@@ -513,12 +513,12 @@ The `data-testid="pending-badge"` change in `StaffLayout.astro` is purely additi
 
 #### Automated
 
-- [x] 3.1 npm run test:e2e exits 0; 2 specs, 2 tests passing
-- [x] 3.2 npx tsc --noEmit passes
-- [x] 3.3 npm run lint passes
+- [x] 3.1 npm run test:e2e exits 0; 2 specs, 2 tests passing — 63b08ce
+- [x] 3.2 npx tsc --noEmit passes — 63b08ce
+- [x] 3.3 npm run lint passes — 63b08ce
 
 #### Manual
 
-- [x] 3.4 npm run test:e2e:headed — flow visible in browser, all steps produce correct UI changes
-- [x] 3.5 After staff fulfillment the order card disappears before guest page reload
-- [x] 3.6 Guest page reload shows "✓ Fulfilled" on the E2E Massage card
+- [x] 3.4 npm run test:e2e:headed — flow visible in browser, all steps produce correct UI changes — 63b08ce
+- [x] 3.5 After staff fulfillment the order card disappears before guest page reload — 63b08ce
+- [x] 3.6 Guest page reload shows "✓ Fulfilled" on the E2E Massage card — 63b08ce

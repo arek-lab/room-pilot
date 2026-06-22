@@ -42,7 +42,11 @@
       "Bash(Write-Host \"done\")",
       "PowerShell(Get-Process *)",
       "PowerShell(head *)",
-      "PowerShell(sort *)"
+      "PowerShell(sort *)",
+      "Bash(NODE_OPTIONS=\"--use-system-ca\" npm test)",
+      "Bash(NODE_OPTIONS=\"--use-system-ca\" node _check_cleanup.mjs)",
+      "Bash(Set-Clipboard *)",
+      "Bash(echo \"EMPTY:$?\")"
     ],
     "deny": [
       "Bash(rm -rf *)"
@@ -54,7 +58,7 @@
       "Bash(git push)"
     ]
   },
-   "hooks": {
+  "hooks": {
     "PostToolUse": [
       {
         "matcher": "Write|Edit",
